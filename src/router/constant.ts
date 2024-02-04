@@ -5,7 +5,7 @@ const Frame = () => import('@/components/FrameBlank/index.vue')
 const conroutes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: { path: '/home' },
+    redirect: { path: '/mes/home' },
     meta: {
       hidden: true
     }

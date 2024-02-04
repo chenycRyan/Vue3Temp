@@ -1,0 +1,44 @@
+{
+  "id": "4135993",
+  "name": "mes",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "20889160",
+      "name": "数据授权",
+      "font_class": "shujushouquan",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "1355088",
+      "name": "set",
+      "font_class": "set",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "627566",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "18169890",
+      "name": "条形码",
+      "font_class": "bar-code-full",
+      "unicode": "e952",
+      "unicode_decimal": 59730
+    },
+    {
+      "icon_id": "21279536",
+      "name": "RFID/二维码",
+      "font_class": "ziyuan86",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    }
+  ]
+}

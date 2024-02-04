@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Node" /* 模块解析策略，ts默认用node的解析策略，即相对的方式导入 */,
+    "strict": false,
+    "allowJs": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    // "isolatedModules": true,
+    "esModuleInterop": true /* 允许 `export =` 导出，由 `import from` 导入 */,
+    "lib": ["ESNext", "DOM"],
+    // 解析非相对模块名的基准目录
+    "baseUrl": "./",
+    // 模块名到基于 baseUrl的路径映射的列表。
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    },
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts",
+    "src/api/mes/qualityTest.js",
+    "src/api/mes/product.js",
+    "src/api/mes/board.js",
+    "src/api/mes/part.js"
+  ]
+}

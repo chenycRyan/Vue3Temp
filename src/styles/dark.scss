@@ -1,0 +1,103 @@
+html.dark {
+
+    // * vue-admin
+	--dark-login-shadow-light: 5px 5px 15px rgb(161 161 161 / 20%);
+	--dark-box-shadow-light: 0 0 10px rgb(255 255 255 / 10%);
+	--dark-border-light: 1px solid #4c4c4d;
+	--dark-main-bg-color: #0d0d0d;
+	--dark-popup-color: #060708;
+
+   	// scroll-bar
+	::-webkit-scrollbar {
+		background-color: var(--#{$el-prefix}-scrollbar-bg-color) !important;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: var(--#{$el-prefix}-border-color-darker) !important;
+	} 
+
+    // layout
+	.#{$el-prefix}-container {
+		.#{$el-prefix}-aside {
+			background-color: var(--#{$el-prefix}-bg-color) !important;
+			border-right: var(--dark-border-light) !important;
+			.logo {
+				border-bottom: var(--dark-border-light) !important;
+			}
+		}
+		.not-aside {
+			border-right: none !important;
+		}
+		.#{$el-prefix}-header {
+			background-color: var(--#{$el-prefix}-bg-color) !important;
+			border-bottom-color: var(--#{$el-prefix}-border-color-light) !important;
+		}
+		.#{$el-prefix}-main {
+			background-color: var(--dark-main-bg-color) !important;
+			.card {
+				background-color: var(--#{$el-prefix}-bg-color) !important;
+			}
+		}
+		.#{$el-prefix}-tabs {
+			background-color: var(--#{$el-prefix}-bg-color) !important;
+            border-bottom: 1px solid var(--#{$el-prefix}-border-color-light) !important;
+		}
+	}
+    
+    // menu
+	.#{$el-prefix}-menu,
+	.#{$el-prefix}-sub-menu,
+	.#{$el-prefix}-menu-item,
+	.#{$el-prefix}-sub-menu__title {
+		background-color: var(--el-bg-color) !important;
+		&:not(.is-active) {
+			color: #bdbdc0 !important;
+		}
+		&.is-active {
+			color: #ffffff !important;
+			background-color: #060708 !important;
+		}
+	}
+	.#{$el-prefix}-menu-item:not(.is-active):hover {
+		background-color: var(--dark-main-bg-color) !important;
+	}
+	.aside-split {
+		background-color: var(--el-bg-color) !important;
+		border-right: var(--dark-border-light) !important;
+		.logo {
+			border-bottom: var(--dark-border-light) !important;
+		}
+	}
+
+    .page-container{
+        background: none;
+    }
+
+	.el-table {
+		.el-table__header th {
+			color: var(--el-text-color-regular) !important;
+			background-color: var(--el-bg-color) !important;
+		}
+	}
+
+	.code-wrapper {
+		color: #CFD3DC;
+		.theme {
+			&__bgcolor {
+				background-color: #262727;
+			}
+			&__bgcolor_1 {
+				background-color: #262727;
+			}
+			&__border {
+				border: 1px solid #5a72db;
+			}
+			&__text_color {
+				color:#fff;
+			}
+			&__bgcolor_th {
+				background-color: #262727;
+			}
+		}
+	}
+
+}

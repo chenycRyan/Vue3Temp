@@ -1,0 +1,1109 @@
+html.blue {
+	$topMenuBgColor:#212d7b;
+	$bottomLineColor: #151b47;
+	$mainColor:#1b2561;
+	$breadColor:#b3c1ff;
+	$dataColor: #53d4e3;
+	$tdColor: #3244a8;
+	$thColor: #495bc4;
+	$tdBgColor: #202e7d;
+	$fourHorn:#4fcef1;
+	$imgUrl: '../assets/images/blue-theme/';
+
+	@mixin btnSty($bgColor, $borderColor){
+		background-color: $bgColor;
+		border: 1px solid $borderColor;
+		box-shadow: 0 0 1px 1px #1d1d1d;
+		color: white;
+		border-radius: 2px;
+	}
+    @mixin noBgAndBorder {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+	}
+	@mixin noPadding {
+		padding: 0;
+	}
+	@mixin shadow($one, $two, $color){
+		box-shadow: 0 0 $one $two $color;
+	}
+	@mixin shadowInset($one, $color){
+		box-shadow: 0 0 $one $color inset;
+	}
+	
+	// header
+	.el-container .el-header{
+		background: $topMenuBgColor;
+		border-bottom: 1px solid $bottomLineColor;
+		.el-breadcrumb__inner.is-link, .el-breadcrumb__inner a{
+			color: $breadColor;
+		}
+	}
+	.header .tool-bar-right .toolBar-icon, .header .tool-bar-right .username,.header .collapse-icon{
+		color: $breadColor;
+	}
+	.el-dropdown .el-button {
+		@include btnSty(#1fa6ab, #31dbe1);
+					&:hover {
+						background: #25b8bd;
+		}
+	}
+
+	.el-dropdown-menu {
+		background: transparent;
+		 		
+	}
+	.el-dropdown-menu__item {
+		color: #9dd9ff;
+		&:hover{
+			background: #117dc2;
+			color: white;
+			box-shadow: 0 0 10px #34b1ff inset;
+		}
+	}
+
+	// tags
+	.tags-view-container{
+		background: $topMenuBgColor;
+		border-bottom: 1px solid $bottomLineColor;
+		.tags-view-wrapper {
+			.tags-view-item{
+				background: #495cbf;
+				color: #c3ceff;
+				border:1px solid #5f77f7;
+				@include shadow(1px, 1px, #101745 );
+				margin-left: 1px;
+				background: #24358b;
+				border: 1px solid #3649ad;
+				border-radius: 5px; // 为了改不同 后期可去
+				&:hover {
+					background: #3147b4;
+					border:1px solid #5f77f7;
+				}
+			}
+			.tags-view-item.active {
+				background-color: #e17882;	
+				border:1px solid #ff9ea7;
+				&::before{
+					display: none;
+				}
+			}
+		}
+		
+	}
+	.el-tag {
+		border-radius: 2px;
+	}
+
+	// tab
+	.el-tabs__nav-wrap::after {
+		background: #11194a;
+		height: 1px;
+	}
+	.el-tabs__item {
+		color: #b3c1ff;
+		&.is-active{
+			color: #53d4e3;
+		}
+	}
+	.el-tabs__active-bar{
+		background: #53d4e3;
+	}
+	
+
+	// welcome
+	.home {
+		background: url($imgUrl + 'welcome-bg.jpg') no-repeat;
+		background-size: contain;
+		border: none;
+		box-shadow: none;
+	}
+	.home-bg {
+		display: none;		
+	}
+
+
+	// 侧边栏
+	.aside .scrollbar {
+		background: $topMenuBgColor;
+		color:#c3ceff;
+		.el-scrollbar__view ul ,.el-sub-menu__title{
+			background: $topMenuBgColor !important;
+			color: #c3ceff !important;
+		}
+		.el-menu-item {
+			color: #c3ceff;
+		}
+		.el-menu-item:hover {
+			background: #2960cf;
+		}	
+	   }
+	   .el-menu .el-menu-item.is-active{
+		  background-image: url($imgUrl + 'selected-menu-bg.png');
+		  color: #e17882;
+		}
+	   .el-container .el-aside .logo{
+		   // background-color: $topMenuBgColor;
+		   border-bottom: 1px solid $topMenuBgColor;
+		   text-transform: uppercase;
+		// background-image: url($imgUrl + 'logo.png');
+		   background-position: 10px 12px;
+		   // background-image: url($imgUrl + 'e.gif');
+		   background-color: $topMenuBgColor;
+		   background-repeat: no-repeat;
+		   span {
+			color: $dataColor;
+			font-weight: normal;
+		   }		  
+	   }
+
+
+	// 右边抽屉
+	.el-drawer {
+		background: rgba($color: #4a80e3, $alpha: 0.5);
+		.el-drawer__header ,.el-drawer__body{
+			color: white;
+			.el-divider__text {
+				background: #3454a9;
+				color: white;
+			}
+			.theme-item{
+				color: #bfd2ff
+			}
+			.el-switch.is-checked .el-switch__core {
+				background: #2b96c9;
+				border: 1px solid #2b96c9;
+			}
+			.el-divider--horizontal {
+				border-top: 1px solid #4a70c9;
+			}
+			.el-switch__core {
+				background: #28396d;
+				border: 1px solid #28396d;
+			}
+		}
+	}
+
+
+   // 进度条
+   .el-progress-bar__outer {
+        background-color: #3646a1;
+   }
+   .el-progress-bar__inner {
+		background: linear-gradient(to right, #19868a 0%, #34f7fd 98%, #fff 100%);
+		@include shadowInset(4px, #74faff);
+		background-repeat: no-repeat;
+   }
+   .el-progress__text {
+		color:$dataColor
+   }
+
+
+	// 主题内容
+   .main-container{
+		// background: $mainColor;
+		 border:1px solid #212b70;
+		background: linear-gradient(to left, $fourHorn,$fourHorn) left top no-repeat,
+		linear-gradient(to bottom, $fourHorn,$fourHorn) left top no-repeat,
+		linear-gradient(to left, $fourHorn,$fourHorn) right top no-repeat,
+		linear-gradient(to bottom, $fourHorn,$fourHorn) right top no-repeat,
+		linear-gradient(to left, $fourHorn,$fourHorn) left bottom no-repeat,
+		linear-gradient(to bottom, $fourHorn,$fourHorn) left bottom no-repeat,
+		linear-gradient(to left, $fourHorn,$fourHorn) right bottom no-repeat,
+		linear-gradient(to left, $fourHorn,$fourHorn) right bottom no-repeat,
+		$mainColor;
+		background-size: 1px 12px, 12px 1px, 1px 12px, 12px 1px;
+		.page-container {
+			background: $mainColor;
+			@include noBgAndBorder;
+			@include noPadding;
+		}
+
+
+		// table	
+		
+		.el-table {
+			border-radius: 8px; // 为了改不同  后期可去
+			thead {
+				color: #a9b4f5;
+				th {
+					background: #2b3b99 !important;
+					color: #c6d8ff;
+					border-top: 1px solid $thColor;
+					border-bottom: 1px solid $thColor;
+					border-right: none;
+					box-shadow: 0 0 5px #4e61cd inset; // 为了改不同  后期可去
+					&:first-child {
+						border-left: 1px solid $thColor;
+					}
+					&:last-child {
+						border-right: 1px solid $thColor;
+					}
+				}
+			}
+			tbody {
+				td {
+					border-bottom: 1px solid $tdColor;
+					border-right: none;
+					&:first-child {
+						border-left: 1px solid $tdColor;
+					}
+					&:last-child {
+						border-right: 1px solid $tdColor;
+					}
+					.el-table__expand-icon .el-icon {
+						color: $dataColor;
+					}
+					img { 
+						border: 1px solid #3949a3;
+						box-shadow: 0 0 0 1px #161f54;
+						padding: 2px;
+					}
+					
+				}
+				.el-table-fixed-column--right {
+					background-color: $tdBgColor;
+				}
+				tr {
+					background-color: $tdBgColor;
+					color: #4ff3ff;	
+					&:hover > td {
+						background-color: #2b3b99 !important;
+						cursor: default;
+					  }	
+					  box-shadow: 0 0 5px #40659b  inset;  // 改不同 后期可去
+				}
+				.el-scrollbar__wrap--hidden-default{
+					background-color: $mainColor;
+				}
+				
+			}			
+			.el-table__inner-wrapper::before,.el-table--border::before{
+				content: "";
+				background-color: $tdColor;
+			}
+			.el-table__expanded-cell {
+				background: $mainColor;
+				&:hover {
+					background: $mainColor!important;
+				}
+				.vertical-line {
+					border-right: 1px solid $dataColor;
+				}
+				.horizontal-line {
+					border-top: 1px solid $dataColor;
+				}
+			}
+		}
+		.el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+			background: $mainColor;
+		}
+        .el-table--border::after,.el-table__inner-wrapper::after,.el-table__border-left-patch {
+			background-color: $thColor;
+		 }
+         .el-table__empty-block {
+			// min-height: 65vh;
+			// background-color: $mainColor;
+			background-color: #243181;
+			border-left: 1px solid $tdColor;
+			border-right: 1px solid $tdColor;
+			.el-table__empty-text {
+				height: 105px;
+				background: url($imgUrl + 'noData.gif') no-repeat center;
+				color: $dataColor;
+				line-height: 115px;
+			}
+		 }
+		 .el-table .el-table.el-table--border .el-table__cell {
+			border-right: none;
+		 }
+		 .el-scrollbar__view {
+			background: $mainColor;
+		   }
+		 
+		// card
+		.el-card {
+			border: 1px solid $tdColor;
+			border-radius: 0;
+			.el-card__header {
+				background: #2b3b99 !important;
+				color: #c6d8ff;
+				border-bottom: 1px solid $thColor;
+				font-size: 16px;
+				height: 35px;
+				line-height: 0px;
+			}
+		}	
+		.el-card__body {
+			background-color: $tdBgColor;
+			.card-cell {
+				border-bottom: 1px solid $tdColor;
+			}
+			.card-table .cell {
+				color: $dataColor;
+				
+			}			
+		}
+		.el-card__body{
+			@include noPadding;	
+		}
+
+        .el-loading-mask{
+			background: rgba($color: $mainColor, $alpha: 0.6);
+			box-shadow: 0 0 6px #0c669e inset;
+		}
+		 // 按钮
+		  .el-button {
+			@include btnSty(#c9e5ff, #e9faff);
+			color: #24307a;
+		  }
+		  .el-button--primary {
+			@include btnSty(#1f82de, #4fcef1);
+			border-radius: 5px; // 为改不同，后期可去
+			&:hover {
+				background: #248ff2;
+			}
+		   }
+		   .el-button--success {
+			@include btnSty(#1fa6ab, #31dbe1);
+				&:hover {
+					background: #25b8bd;
+				}
+				border-radius: 5px; // 为改不同，后期可去
+		   }
+		   .el-button--danger {
+			@include btnSty(#e17882, #ffa8b0);
+				&:hover {
+					background: #f0848f;
+				}
+				border-radius: 5px; // 为改不同，后期可去
+		   }
+		   .el-button--warning {
+			@include btnSty(#ef9e5b, #ffc89b);
+			border-radius: 5px; // 为改不同，后期可去
+		   }
+		   .el-pagination.is-background {
+			  .btn-prev {
+				@include btnSty(#2b3b99, #3a4cb3);
+				&:disabled {
+					@include btnSty(#303c72, #404f92);
+				}
+				border-radius: 5px; // 为改不同，后期可去
+			  }
+			  .el-pager .number {
+				@include btnSty(#1fa6ab, #31dbe1);
+				border-radius: 5px; // 为改不同，后期可去
+			  }
+			   .btn-next {
+				@include btnSty(#2b3b99, #3a4cb3);
+				&:disabled {
+					@include btnSty(#e17882, #ffa8b0);
+				}
+				border-radius: 5px; // 为改不同，后期可去
+			  }
+			  .el-pagination__total {
+				color: #6a74b5;
+				border-radius: 5px; // 为改不同，后期可去
+			  }
+		   }
+		  
+		   // el-from		   	  
+		  // .el-form {
+			.el-form-item__label {
+				color:#e6d0b5;
+			}
+			.el-input__wrapper{
+				@include noPadding;
+				border-radius: 4px;
+				border-radius: 5px;  // 为了改不同 后期可去
+			}
+			.el-input__inner,.el-date-editor {
+				background-color: $mainColor;			
+				box-shadow: 0 0 5px #6975e6 inset;
+				color: #e7d1b6;
+				border-radius: 2px;
+				margin: 0;
+				padding: 0 10px;
+				border-radius: 5px;  // 为了改不同 后期可去
+			}
+			.el-input__inner:focus{
+				@include shadowInset(5px, #8a96ff);
+				border: 1px solid #8292ff;
+			}
+			.el-input__inner{
+				// border-radius: 2px 0 0 2px;
+			  }
+			.el-input__inner::placeholder,.el-range-separator{
+				color: #6a74b5;
+			}
+			.el-input__suffix {
+				padding: 0 8px 0 0;
+                background: rgba($color: #1c2a7e, $alpha: 0.95);
+				border-radius: 0px 2px 2px 0;
+				@include shadowInset(5px, #8a96ff);
+				color: $dataColor;
+			}
+		 //  }
+		   
+   }
+
+
+   // logo
+   .el-aside .logo {
+		justify-content: left;
+		padding-left: 50px;
+   }
+   
+
+ // SELECT
+	 .el-popper.is-light {
+		background: rgba($color: #22307e, $alpha: 0.95);
+		border:none;
+		@include shadowInset(10px, #6671ff);
+		border: 1px solid #6671ff;
+   }
+   .el-popper.is-light .el-popper__arrow::before {
+		background: linear-gradient(140deg, #6671ff, #22307e);
+		border:none;
+		border-top: 1px solid #949bff;
+		border-left: 1px solid #949bff;
+   }
+   .el-select-dropdown__item {
+	color: #e7d1b6;
+   }
+   .el-select-dropdown__item.hover, .el-select-dropdown__item:hover,.el-cascader-node:hover,.el-cascader-node.is-active {
+	   background-color: #117dc2;
+	   @include shadowInset(10px, #87c2ff);
+	   color: white;
+   }
+   .el-select .el-input__wrapper {
+       background: transparent;
+	   box-shadow: none;
+   }
+   .el-cascader-node {
+	  color: $dataColor;
+   }
+   .el-cascader-menu:first-child {
+		border-right:1px solid #6671ff;
+   }
+   .el-input-number__decrease,.el-input-number__increase{
+	    background-color: #293990;		
+		@include shadowInset(5px, #6b86ff);
+			.el-icon {
+				color: $dataColor;
+			}
+   }
+   .el-input-number__decrease {
+		border-radius: 0;
+		border-right: none;
+   }
+   .el-input-number__decrease.is-disabled,
+   .el-input-number__increase.is-disabled {
+	.el-icon {
+		color: #5f6bc2;
+	}
+   }
+   .el-input-number__increase {
+		border-radius: 0;
+		border-left: none;
+   }
+
+   // 日期选择
+   .el-date-range-picker .el-picker-panel__body,.el-picker-panel__sidebar{
+		background: rgba($color: #22307e, $alpha: 0.95);
+		border:none;
+		@include shadowInset(10px, #6671ff);
+		color: white;
+		.el-picker-panel__shortcut {			
+			color: #53d4e3;
+		}
+   }
+   .el-date-table td.today .el-date-table-cell__text {
+	        background: #53d4e3;
+			color: #22307e;
+			border-radius: 0;
+   }
+   .el-date-table th,.el-picker-panel__icon-btn{
+	  color: #53d4e3;
+   }
+   .el-picker-panel__icon-btn.is-disabled {
+	color: #5569db;
+   }
+   .el-date-range-picker__content.is-left {
+	  border-right:1px solid #4456b7;
+   }
+   .el-date-table th {
+	border-bottom: 1px solid #4456b7
+   }
+
+
+   // dialog &  el-message-box
+   .el-dialog,.el-message-box{
+	 background: rgba($color: #3f53c9, $alpha: 0.3);	
+	@include shadowInset(10px, #3f53c9 );
+	border-radius: 2px !important;
+	border: none;
+	.el-dialog__title,.el-message-box__title,.el-message-box__content {
+		color: #fff;
+	}
+	.el-popper.is-light {
+		background: rgba($color: #22307e, $alpha: 0.1);
+		border:none;
+		@include shadowInset(10px, #6671ff);
+   }
+   .el-popper.is-light .el-popper__arrow::before {
+		background: linear-gradient(140deg, #6671ff, #22307e);
+		border:none;
+		border-top: 1px solid #949bff;
+		border-left: 1px solid #949bff;
+   }
+   .el-select-dropdown__item {
+	color: #e7d1b6;
+   }
+	.el-form {
+		.el-form-item__label {
+			color:#fff;
+		   }		
+		.el-input__inner,.el-date-editor {
+			background-color: #293990;	
+			border: 1px solid #5a72db;		
+			@include shadowInset(5px, #6b86ff);
+			color: #60fdff;
+			font-size: 15px;
+		}		
+		.el-input__inner:focus{
+			@include shadowInset(8px, #6ca4ff);
+			border: 1px solid #63c3e6;
+		}
+	}	
+   }
+   .el-dialog__headerbtn .el-dialog__close {
+        color: #49e6ff;
+   }
+
+   .el-dialog{
+		// background-image: url($imgUrl + 'dialog-bg.png');
+		// background-color: rgba($color: #3f53c9, $alpha: 0.3);
+		// background-size: 100% 100%;
+		background: linear-gradient(to left, $fourHorn,$fourHorn) left top no-repeat,
+		linear-gradient(to bottom, $fourHorn, $fourHorn) left top no-repeat,
+		linear-gradient(to left, $fourHorn, $fourHorn) right top no-repeat,
+		linear-gradient(to bottom, $fourHorn, $fourHorn) right top no-repeat,
+		linear-gradient(to left, $fourHorn, $fourHorn) left bottom no-repeat,
+		linear-gradient(to bottom, $fourHorn, $fourHorn) left bottom no-repeat,
+		linear-gradient(to left, $fourHorn, $fourHorn) right bottom no-repeat,
+		linear-gradient(to left, $fourHorn, $fourHorn) right bottom no-repeat,
+		rgba($color: #3f53c9, $alpha: 0.3);
+		background-size: 2px 15px, 15px 2px, 2px 15px, 15px 2px;
+   }
+
+   .el-pagination {	
+	.el-input__inner,.el-date-editor {
+		color: #2fc4c7;
+	}
+}
+
+
+   // el-radio
+   .el-radio__input.is-checked .el-radio__inner {
+		border-color: $dataColor;
+		background: $dataColor;		
+   }
+   .el-radio__inner {
+	    border-color: $dataColor;
+		background: #35439c;
+		@include shadowInset(3px, $dataColor);
+   }
+   .el-radio__inner::after {
+	   background: $dataColor;
+   }
+   .el-radio__input.is-checked + .el-radio__label {
+	  color: $dataColor;
+   }
+   .el-radio__label {
+	color: white;
+   }
+
+
+   // checkbox
+   .el-checkbox__inner {
+	border-color: $dataColor;
+	background: transparent;
+	@include shadowInset(3px, $dataColor);
+   }
+
+  
+   // el-upload
+   .img-uploader .el-upload ,.el-upload-dragger{
+      border: 1px dashed #6b87ff;
+	  &:hover {
+		border: 1px dashed $dataColor;
+	  }
+   }
+   .img-uploader .el-icon.img-uploader-icon {
+	color: #6b87ff;
+	&:hover {
+		color: #53d4e3;
+	  }
+   }
+   .el-upload-dragger {
+	background: transparent;
+   }
+   .el-upload-dragger .el-upload__text {
+    color: #d1e0ff;
+   }
+  
+
+   // 分割线
+   .el-divider--horizontal {
+	border-top: 1px solid;
+	border-image: linear-gradient(to right, rgba(255,255,255,0), #5a7fc9,rgba(255,255,255,0)) 2 2 2 2 ;
+   }
+   .el-divider__text {
+    background-color: #24307a;
+	color: #5a7fc9;
+   }
+
+   // el-message
+   .el-message--error {
+	 background-color: transparent;
+	 @include shadowInset(10px, #e17882);
+	 border:1px solid #ffa8b0;
+	 border: none;
+   }
+   
+   // 排程管理
+   .END_EXECUTED,.START_EXECUTED,.READY,.ERROR_EXECUTED{
+	display: flex;
+	height: 38px;
+	justify-content: space-between;
+	color: white;
+	line-height: 38px;
+	.action {
+		width: 14px;
+		height: 11px;
+		background-image: url($imgUrl + 'goNext.png');
+		margin: 10px 0;
+		img {
+			display: none;
+		  }
+	  }
+   }
+   .ON_LINE {
+    color: #3ed53e;
+   }
+   .OFF_LINE {
+    color: #858585;
+   }
+   .END_EXECUTED {
+	background: linear-gradient(to right, #1fa6ab, $mainColor);
+	@include shadowInset(5px, #26fdbe);
+  }
+	.START_EXECUTED,.READY {
+		background: linear-gradient(to right, #3d66ec, $mainColor);
+		@include shadowInset(5px, #4bb5ff);
+	}
+	.ERROR_EXECUTED {
+		background: linear-gradient(to right, #fb9183, $mainColor);
+		@include shadowInset(5px, #fb9183);
+	}
+   .info {
+	@include noBgAndBorder;
+	@include noPadding;
+	.label {
+		color: white;
+	}
+	.item-wrap .item{
+		.bar {
+		  height: 12px;
+		  width: 150px;	
+		  border-radius: 2px;	  
+	    }
+    } 
+   }
+   .action-wrap {
+	.btn {
+		@include btnSty(transparent, #4fcef1);
+		color: #4fcef1;
+	}
+	.btn.del {
+		@include btnSty(transparent, #ffa8b0);
+		color: #ffbec3;
+	}
+	.auto-plc-wrap {
+		@include btnSty(transparent, #4fcef1);
+		color: #4fcef1;
+	}
+   }
+   .el-tree,.table-box{
+	background: #212c72;
+	border:none;
+	border-radius: 0px;
+   }
+   .el-tree{
+	  color: #b3c1ff;	  
+   }
+   .filter .title {
+	color: #b3c1ff;
+  }
+   .card-wrap .box-card.nomove{
+	  border: 1px solid #293680;
+   }
+   .card-wrap .box-card .card-content {
+		color: #a9b1df;
+		padding: 10px;
+		.item .img{
+			height: 60px;
+			object-fit: fill;
+			border-radius: 3px;
+		}
+		.num {
+			border-radius: 3px;
+			background: #727272;
+		}
+   }
+   .gif {
+	  content: url($imgUrl + 'point-blue.gif');
+   }
+   .card-wrap .box-card {
+		.box-card-item {
+			background: $mainColor;
+			border-radius: 0;
+		}
+		.box-header {
+			background-color: #2b3b99;
+			border-bottom: none;
+			color: white;
+			.action {
+				width: 14px;
+				height: 11px;
+				background-image: url($imgUrl + 'goNext.png');
+				margin-right: 15px;
+				img {
+					display: none;
+				  }
+			  }
+	   }
+		.content {
+			background-color: $tdBgColor;
+			border:1px solid #3344aa;
+			color: white;
+			.default {
+				background-color: $tdBgColor;			
+			  }
+			.img-wrap {
+				background: url($imgUrl + 'img-bg.png') no-repeat;
+				background-size: contain;
+				@include shadowInset(15px, #275ba8);
+				background-color: transparent;
+				width: 74px;
+				height: 74px;
+				text-align: center;
+				img {
+					width: 98%;
+				}
+			  }
+			.item {
+				.num {
+					background: transparent;
+					box-shadow: 0 0 6px #65c5db;
+				}
+				.value{
+                    color: $dataColor
+				}
+			}
+			.lingjian-wrap span {
+				color: $dataColor;
+				display: block !important;
+				line-height: 30px;
+			}
+	   }
+	  
+	  .add-wrap{
+		color: #53d4e3;
+	  }
+   }
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+    color: #58e7ed;
+    background-color: #4d72d1;
+	margin: 0 5px;
+	&:first-child {
+		border-radius: 3px 3px 0 0;
+	}
+	&:last-child {
+		border-radius: 0 0 3px 3px;
+	}
+}
+.el-select-tags-wrapper .el-tag.el-tag{
+	color: #58e7ed;
+    background-color: #4d72d1;
+	border: 1px solid #7094f1;
+    box-shadow: 0 0 5px #0b1136;
+	.el-tag__close {
+		color: #f5f8ff;
+	}
+}
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected::after{
+	background-color: #50e2ff;
+}
+
+   // 料仓管理
+   .right-box .Iform .title-bar {
+    color: #409eff;
+}
+   .content{
+	.vertical-index .floor-index img{
+		content: url($imgUrl + 'spro.png');
+	}
+	.vertical-index .prod-index img {
+		content: url($imgUrl + 'fpro.png');
+		// display: none;
+	}
+	.color-s {
+		color: #14b387;
+	}
+	.card-box {
+		.card-list{
+		  border-right: 1px solid #3a4899;
+		  border-bottom: 1px solid #3a4899;
+		  .prod,.disable .bg-grey {
+			background: #1c2c70;
+		  }
+		}		
+		.card-list .card-item {
+		  border: 1px solid #3a4899;
+		  border-right: none;
+		  border-bottom: none;
+		  min-height: 160px;
+		  min-width: 100px;
+		  .line-row {
+			color: #d2d8fd;
+			font-size: 14px;
+			line-height: 25px;
+		}
+		.material {
+			color: #bec3e3;
+			.nodot {
+				background-color: #535b8f !important;
+			}
+		}
+		.line-item .label {
+				color: #9ca7eb !important;
+		}
+		.FREE{
+			background-image: linear-gradient(265deg, #1b2561 0%, #54b1a6 100%);
+		}
+		.USING{
+			background-image: linear-gradient(265deg, #1b2561 0%, #FBAB7E 100%);
+		  }
+		  .tip {
+			height: 100%;
+			position: relative;		
+			
+			.line-item{
+				position: absolute;
+				left: 5%;
+				top: 40px;
+				width: 90%;
+				color: #d2d8ff;
+				.label {
+					color: #9ca7eb !important;
+				}
+			}
+			.line-row {
+				position: absolute;
+				left: 0;
+				top: 40px;
+				width: 100%;
+				line-height: 24px;
+				font-size: 14px;			
+				
+				.pWarp {
+					display: flex;
+					width: 80%;
+					margin: 0 auto 5px auto;
+				}
+				.name,.data{
+					display:inline-block;
+					height: 22px;
+					line-height: 22px;
+					box-shadow: 0 0 5px #788aff inset;
+				}
+				.name {					
+					width: 90px;
+					background: #4250a9;					
+					color: #d2d8ff;	
+					text-align: right;				
+				}
+				.data {
+					display:inline-block;
+					flex: 2;
+					background: #1e2967;
+					text-align: left;
+					padding-left: 10px;
+					color: $dataColor;			
+				}
+				.unBind {
+					justify-content: flex-end;
+					color: #fb9183;
+					margin-top: 10px;
+					.el-icon {
+						font-size: 16px !important;
+						margin-top: 4px;
+						color: #fb9183;
+					}
+				}
+			}
+		  }
+		 }
+	 }
+	 .horizontal-index,.vertical-index {
+		color: #77c7ff;
+	  }
+   } 
+   // 滚动条
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #202c72;
+  }
+  
+  /*定义滑块*/
+  ::-webkit-scrollbar-thumb {
+	background-color: #284a94;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+	background-color: #2d54a8;
+  }
+  
+  // 设备看板
+  .devivePage {
+	padding: 0;
+	.main-box .unit:first-child .img-box {
+		height: 100%;
+	  }
+	  .unit {
+		.el-card__header {
+			background: url($imgUrl + 'broad-title.png') #202e7d !important;
+			background-size: 100% 100%;
+			border: none;
+			height: 39px;
+			text-align: center;
+	    }
+		.el-card__body {
+			padding: 10px;
+			.attr-box .attr-item {
+				background: url($imgUrl + 'item-bg.png') no-repeat;
+				height: 55px;
+				line-height: 35px;
+				text-align: center;
+				p {
+					color: #e5e8ff;
+					span {
+						color: #33ccef;
+					}
+				}
+			}
+			
+		  }
+	  }
+	 .el-card {
+		&:first-child .el-card__header{
+			display: none;
+		}
+		&:first-child .el-card__body{
+			background: url($imgUrl + 'board-bg.jpg') center #202e7d no-repeat;
+		}
+	 }
+  }
+  .home {
+	.auth {
+		position: fixed;
+		bottom: 10px;
+		right: 20px;
+		width: 180px;
+		height: 150px;
+		border-radius: 5px;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		color: #123680;
+		text-align: center;
+		font-size: 12px;
+		background: #f1ede6;
+	}
+	.img {
+		height: 100px;
+		margin-bottom: 10px;
+	  }
+}
+
+	.code-wrapper {
+		--code-text-color: #fff;
+		--el-text-color-regular: #60fdff;
+
+		color: #e6d0b5;
+		.dict-items {
+			color: var(--code-text-color);
+		}
+		
+		.el-date-table td.in-range .el-date-table-cell {
+			background-color: #7d90b6;
+		}
+		.el-form-item__label {
+			color:#fff;
+		}		
+		.el-input__inner,.el-date-editor {
+			background-color: #293990;	
+			border: 1px solid #5a72db;		
+			@include shadowInset(5px, #6b86ff);
+			color: #60fdff;
+			font-size: 15px;
+		}		
+		.el-input__inner:focus{
+			@include shadowInset(8px, #6ca4ff);
+			border: 1px solid #63c3e6;
+		}
+		.el-button.is-disabled {
+			opacity: 0.6;
+		}
+		.theme {
+			&__bgcolor {
+				background-color: #293990;
+			}
+			&__bgcolor_1 {
+				background-color: #202e7d;
+			}
+			&__bgcolor_th {
+				background-color: #293990;
+			}
+			&__border {
+				border: 1px solid #5a72db;
+			}
+			&__text_color {
+				color:#fff;
+			}
+		}
+		.el-transfer-panel {
+			background-color: #202e7d;
+		}
+		.el-transfer-panel__header {
+			background-color: #293990;
+		}
+		.el-transfer-panel .el-transfer-panel__header .el-checkbox .el-checkbox__label,
+		.el-transfer-panel__item.el-checkbox .el-checkbox__label, .bg-text-color {
+			color: #fff;
+		}
+		.form-component .settings-wrapper .settings-item.active {
+			border: 1px solid #fff;
+		}
+	}
+	.el-date-range-picker {
+		--el-datepicker-inrange-bg-color: #7d90b6;
+		--el-bg-color-overlay: #ffffff;
+	}
+}
+
+
+

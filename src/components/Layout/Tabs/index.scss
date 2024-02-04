@@ -1,0 +1,59 @@
+.tabs-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    .close-action {
+        margin-right: 20px;
+    }
+    .tabs-cons {
+        width: calc(100% - 40px);
+    }
+    :deep(){
+        .el-tabs {
+            &__header {
+                border-bottom: 0;
+                margin: 0;
+            }
+            &__nav {
+                border: 0;
+            }
+            &__item {
+                height: 36px;
+                line-height: 36px;
+                margin-top: 4px;
+                padding: 0 30px 0 30px;
+                margin-right: -12px;
+                text-align: center;
+                border: 0;
+              outline: none;
+              transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+
+              &.is-active{
+                padding: 0 30px 0 30px;
+                color: var($color-primary);
+                background: var(--#{$el-prefix}-color-primary-light-8);
+                outline: none;
+                mask: url('@/assets/images/tabs_images/tab.png');
+                mask-size: 100% 100%;
+                &:hover{
+                    color: var($color-primary);
+                    background: mix($color-white, $color-primary, 90%);
+                    mask: var(--#{$el-prefix}-color-primary-light-8);
+                    mask-size: 100% 100%;
+                }
+              }
+              &:hover {
+                padding: 0 30px 0 30px;
+                color: var($color-black);
+                background: #dee1e6;
+                mask: url('@/assets/images/tabs_images/tab.png');
+                mask-size: 100% 100%;
+              }
+            }
+        }
+    }
+    .more-button {
+        padding-right: 20px;
+    }
+}

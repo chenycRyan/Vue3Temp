@@ -1,0 +1,136 @@
+.layout-columns {
+    width: 100%;
+	min-width: 1100px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    // background-color: #ffffff;
+	border-right: 1px solid #f0eded;
+	transition: all 0.3s ease;
+    .scrollbar{
+        height: calc(100% - 55px);
+        .menu{
+            overflow-x: hidden;
+            border-right: none;
+        }
+    }
+    .logo {
+        box-sizing: border-box;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border-bottom: 1px solid #f0eded;
+        img {
+            object-fit: contain;
+            width: 180px;
+            overflow-x: hidden;
+            flex-shrink: 0;
+            transition: width .3s linear;
+        }
+        span {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--el-menu-text-color);
+            white-space: nowrap;
+        }
+    }
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 55px;
+    padding: 0 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f1f1f1;
+    :deep(.tool-bar-right) {
+        .toolBar-icon,
+        .username {
+            color: var(--el-text-color-primary);
+        }
+    }
+}
+
+.main {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+//----深色侧边栏---如需重置，屏蔽代码
+.el-container {
+	width: 100%;
+	height: 100%;
+	.el-aside {
+		width: auto;
+		overflow: hidden;
+		background-color: #191a20;
+		border-right: 1px solid #191a20;
+		.menu {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			transition: all 0.3s ease;
+			.el-scrollbar {
+				height: calc(100% - 55px);
+				.el-menu {
+					overflow-x: hidden;
+					border-right: none;
+				}
+			}
+			
+		}
+        .logo {
+            box-sizing: border-box;
+            height: 55px;
+            border-bottom: 1px solid #282a35;
+            span {
+                font-size: 21.5px;
+                font-weight: bold;
+                color: #dadada;
+                white-space: nowrap;
+            }
+            img {
+                width: 90%;
+                object-fit: contain;
+                margin-right: 6px;
+            }
+        }
+	}
+	.el-header {
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 55px;
+		padding: 0 15px;
+		background-color: #ffffff;
+		border-bottom: 1px solid #f1f1f1;
+		:deep(.tool-bar-ri) {
+			.toolBar-icon,
+			.username {
+				color: var(--el-text-color-primary);
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.el-container {
+		.el-container {
+            width: 100vw;
+            flex: unset;   
+        }  
+	}
+}
